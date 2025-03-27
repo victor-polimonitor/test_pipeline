@@ -5,4 +5,4 @@ on:
     branches: [ "*" ]
 jobs:
   build_and_test:
-      uses: ./.github/workflows/Common_Workflow.yaml
+      uses: ./.github/workflows/Common_Workflow.yml
