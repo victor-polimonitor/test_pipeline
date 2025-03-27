@@ -6,7 +6,7 @@ on:
       - completed
 
 jobs:
-  deploy:
+  second_pipe:
     runs-on: ubuntu-latest
 
     steps:
