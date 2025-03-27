@@ -1,0 +1,8 @@
+name: First Pipeline
+run-name: ${{ github.actor }} is running the ${{ github.workflow }}
+on:
+  - workflow_dispatch
+
+jobs:
+  test:
+      uses: ./.github/workflows/Common_Workflow.yaml

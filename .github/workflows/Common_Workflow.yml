@@ -1,0 +1,20 @@
+name: Common Workflow aka Reusable Workflow
+on:
+  workflow_call
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      - name: common_workflow
+        run: |
+          echo "Common Workflow"
