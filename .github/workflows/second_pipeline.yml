@@ -1,7 +1,7 @@
 name: Second Pipeline
 on:
   workflow_run:
-    workflows: ["First Pipe"]
+    workflows: ["first_pipe"]
     types:
       - completed
 
