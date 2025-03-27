@@ -1,0 +1,8 @@
+name: third pipe
+run-name: ${{ github.actor }} is running the ${{ github.workflow }}
+on:
+  push:
+    branches: [ "*" ]
+jobs:
+  build_and_test:
+      uses: ./.github/workflows/Common_Workflow.yaml
