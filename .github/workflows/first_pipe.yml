@@ -1,4 +1,4 @@
-name: first_pipe
+name: first pipe
 
 on:
   push: 
