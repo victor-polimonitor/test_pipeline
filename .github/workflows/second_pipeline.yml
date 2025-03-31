@@ -28,3 +28,10 @@ jobs:
 
       - name: Display structure of downloaded files
         run: ls -R
+
+      - name: set env variables
+        run: |
+          echo "base_url=$(cat base_url.txt)" >> $GITHUB_ENV
+          echo "sha_short=$(cat sha_short.txt)" >> $GITHUB_ENV
+          echo "base_url=$(cat base_url.txt)"
+          echo "sha_short=$(cat sha_short.txt)"
