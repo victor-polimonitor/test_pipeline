@@ -16,3 +16,15 @@ jobs:
         run: |
           echo "Starting Deploying the Application"
           echo "Application Deployed"
+    
+      - name: Download workflow artifact
+        uses: dawidd6/action-download-artifact@v9
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          workflow: first_pipe.yml
+          run_id: ${{ github.event.workflow_run.id }}
+          name: docker-build-artifacts
+          if_no_artifact_found: fail
+
+      - name: Display structure of downloaded files
+        run: ls -R

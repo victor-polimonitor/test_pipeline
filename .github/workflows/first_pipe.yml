@@ -16,3 +16,17 @@ jobs:
             run: |
               echo "Starting Deploying the Application"
               echo "Application Deployed"
+
+          - name: Save base_url and sha_short as artifact
+            run: |
+                mkdir -p artifacts
+                echo "baseurl" > artifacts/base_url.txt
+                echo "sha_short" > artifacts/sha_short.txt
+
+          - name: Upload artifacts
+            # this step is essential for the integration-tests.yml workflow
+            # and have been implemented to avoid running the integration tests on the main branch
+            uses: actions/upload-artifact@v4
+            with:
+              name: docker-build-artifacts
+              path: artifacts/
